@@ -1,0 +1,19 @@
+.button{
+    display: flex;
+    background-color: #98f0a5;
+    padding: 15px;
+    border-radius: 12px;
+    border: 0px;
+    width: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+}
+
+.button:hover{
+    padding: 20px;
+    justify-content: flex-start;
+
+    background-color: #bdf0c5;
+}
