@@ -21,8 +21,8 @@ body {
 
 .crashas {
     box-sizing: border-box;
-    width: 220px;
-    height: 340px;
+    width: 54mm;
+    height: 86mm;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -44,7 +44,7 @@ body {
 }
 
 .crashas__recorte {
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     position: absolute;
     width: 76.26px;
     height: 17px;
@@ -55,6 +55,8 @@ body {
 .crashas__img {
     width: 48%;
     margin-top: 35px;
+    border: #D9D9D9  2px;
+    border-radius: 4px;
     z-index: 1;
 }
 
@@ -83,7 +85,7 @@ body {
 }
 
 .crashas__qr__code {
-    width: 80px;
+    width: 75px;
     rotate: 90deg;
 }
 
