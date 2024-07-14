@@ -5,8 +5,8 @@ let range = 'Turmasdb!A' + posicaoUm + ':C' + posicaoDois;
 let apiKey = 'AIzaSyBJf7yNdLqhaBRb5VK5gbqJ7CbR0Gu3oLY';
 
 let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+let pagina = 0;
 
-let primeiraVez = 0
 
 function printHere() {
     print()
@@ -16,6 +16,7 @@ function proximaPag() {
     var estudante;
     var matricula;
     var img;
+    var linkQR;
 
    
         posicaoUm = posicaoUm + 9;
@@ -32,6 +33,7 @@ function proximaPag() {
     var idI = 0;
     var idE = 0;
     var idM = 0;
+    var idQR = 0;
 
     fetch(url)
         .then(response => {
@@ -49,16 +51,22 @@ function proximaPag() {
                 idI = idI + 1;
                 idE = idE + 10;
                 idM = idM + 100;
+                idQR = idQR + 1000;
 
                 estudante = values[i][0];
                 matricula = values[i][1];
                 img = values[i][2];
 
+                linkQR = "https://quickchart.io/qr?text=https://suap.ifsul.edu.br/edu/aluno/"+matricula+"&size=&1600";
+
                 document.getElementById(idI).src = img;
                 document.getElementById(idE).innerHTML = estudante;
                 document.getElementById(idM).innerHTML = matricula;
+                document.getElementById(idQR).src = linkQR;
             }
         });
+        pagina = pagina + 1;
+        document.getElementById("pagina").innerHTML = ("Pagina "+pagina+" de 34");
 }
 
 function anteriorPag() {
@@ -108,6 +116,7 @@ function anteriorPag() {
                 document.getElementById(idM).innerHTML = matricula;
             }
         });
-
+        pagina = pagina - 1;
+        document.getElementById("pagina").innerHTML = ("Pagina "+pagina+" de 34");
 }
 

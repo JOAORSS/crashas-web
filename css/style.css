@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     border: 1px solid #000;
     align-items: center;
-    background-color: #FAF8F8;
+    background-color: #ffff;
     border-radius: 12px;
     position: relative;
 
@@ -84,18 +84,23 @@ body {
 
 }
 
-.crashas__qr__code {
-    width: 75px;
-    rotate: 90deg;
-}
+
 
 .crashas__qr__info-um {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.625rem;
-
     align-self: center;
     text-align-last: left;
     margin: 0px;
+    position: relative;
+    top: 2px;
+}
+
+.crashas__qr__code {
+    width: 80px;
+    rotate: 90deg;
+    overflow: hidden;
+
 }
 
 .crashas__qr__info-dois {
@@ -103,6 +108,8 @@ body {
     font-size: 0.5rem;
     align-self: center;
     margin: 0px;
+    position: relative;
+    bottom: 2px;
 }
 
 @media print {
