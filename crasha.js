@@ -16,7 +16,6 @@ function proximaPag() {
     var estudante;
     var matricula;
     var img;
-    var linkQR;
 
    
         posicaoUm = posicaoUm + 9;
@@ -33,7 +32,6 @@ function proximaPag() {
     var idI = 0;
     var idE = 0;
     var idM = 0;
-    var idQR = 0;
 
     fetch(url)
         .then(response => {
@@ -51,18 +49,15 @@ function proximaPag() {
                 idI = idI + 1;
                 idE = idE + 10;
                 idM = idM + 100;
-                idQR = idQR + 1000;
 
                 estudante = values[i][0];
                 matricula = values[i][1];
                 img = values[i][2];
 
-                linkQR = "https://quickchart.io/qr?text=https://suap.ifsul.edu.br/edu/aluno/"+matricula+"&size=&1600";
 
                 document.getElementById(idI).src = img;
                 document.getElementById(idE).innerHTML = estudante;
                 document.getElementById(idM).innerHTML = matricula;
-                document.getElementById(idQR).src = linkQR;
             }
         });
         pagina = pagina + 1;
